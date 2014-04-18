@@ -1,0 +1,20 @@
+# Makefile for Unix/Linux
+#
+ALLEG	=`allegro-config --libs`
+
+OBJECTS =  cardemo.o
+
+all:	cardemo
+
+
+# executables
+
+cardemo:$(OBJECTS)
+	cc $(OBJECTS) $(ALLEG) -o $@ 
+
+clean:
+	rm -f *.o
+	rm -f cardemo
+
+
+
